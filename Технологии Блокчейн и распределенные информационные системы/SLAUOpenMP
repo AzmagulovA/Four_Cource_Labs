@@ -1,0 +1,131 @@
+#include <stdio.h>
+#include <math.h>
+#include <omp.h>
+#include <iostream>
+#include <thread>
+
+
+using namespace std;
+
+float** GetMatrix(int n) {
+    float** matrix = new float* [n];
+    for (int i = 0; i < n; i++)
+        matrix[i] = new float[n+1];
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < n+1; j++)
+        {
+            matrix[i][j] = rand() % 10;
+        }
+    /*cout << "Матрица: " << endl;
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n+1; j++)
+            cout << matrix[i][j] << " ";
+        cout << endl;
+    }
+    cout << endl;*/
+    return matrix;
+}
+
+void Parallel(int n, float** matrix) {      
+    float  coef;
+    float  values[10000];
+    int i, j, k;
+    double ResultTime, timein, timeout;
+    // Метод Гаусса, прямой ход
+    timein = omp_get_wtime();
+    for (i = 0; i < n; i++) {
+        coef = matrix[i][i];
+        for (j = n; j >= i; j--)
+            matrix[i][j] /= coef;
+
+#pragma omp parallel for private (j, k, coef)
+        for (j = i + 1; j < n; j++) {
+            coef = matrix[j][i];
+            for (k = n; k >= i; k--)
+                matrix[j][k] -= coef * matrix[i][k];
+        }
+    }
+
+    //Обратный ход
+    values[n - 1] = matrix[n - 1][n];
+    for (i = n - 2; i >= 0; i--) {
+        values[i] = matrix[i][n];
+#pragma omp for private (j)
+        for (j = i + 1; j < n; j++)
+            values[i] = values[i] - matrix[i][j] * values[j];
+    }
+    timeout = omp_get_wtime();
+    ResultTime = timeout - timein;
+    cout << "Время вычислений (параллельно): " << ResultTime << " секунд" << endl;
+
+    /*for (int i = 0; i < n; i++) {
+        cout << floor(xx[i] * 1000) / 1000. << " ";
+        
+        cout << endl;
+    }*/
+   
+}
+// Инициализируем матрицу Гаусса
+    // n - число уравнений
+    // m - число переменных
+void Pryamoi(int n, float** matrix) {    
+    float coef;
+    float values[10000];
+    double timeResult, timein, timeout;
+    timein = omp_get_wtime();
+    for (int i = 0; i < n; i++) {
+        coef = matrix[i][i];//запоминаем левый верхний элемент рассматриваемой строки
+        for (int j = n; j >= i; j--)//делим все элементы строки, само число становится равным 1
+        {
+            matrix[i][j] = matrix[i][j]/coef;
+        }
+        for (int j = i + 1; j < n; j++) {//рассматриваем последующие строки
+            coef = matrix[j][i];//запоминаем первый значимый элемент строки
+            for (int k = n; k >= i; k--)//для всех элементов строки
+            {
+                matrix[j][k] = matrix[j][k] - coef * matrix[i][k];//вычитаем соответсвующее значение умноженное на коэф. (таким образом первый знач эл = 0)
+            }
+        }
+    }
+    //Обратный ход
+    values[n - 1] = matrix[n - 1][n];//последний элемент матрицы равняется последнему x
+    for (int i = n - 2; i >= 0; i--) {
+        values[i] = matrix[i][n];
+        for (int j = i + 1; j < n; j++)//все последующие значения матрицы выявляются вычитанием найденных значений от правой части         
+        {   
+            values[i] = values[i] - matrix[i][j] * values[j];
+        }
+    }
+    timeout = omp_get_wtime();
+    timeResult = timeout - timein;
+    cout << "Время вычислений (прямой): " << timeResult << " секунд" << endl;
+
+    /*for (int i = 0; i < n; i++) {
+        cout << floor(values[i] * 1000) / 1000. << " ";
+
+        cout << endl;
+    }*/
+}
+
+int main() {
+    setlocale(LC_CTYPE, "rus");
+    float** matrix = GetMatrix(2503);
+    //float** matrix = GetMatrix(3);
+
+    std::thread t1([&]()
+        {
+            Pryamoi(2503,  matrix);
+           
+        });
+
+    std::thread t2([&]()
+        {
+            Parallel(2503, matrix);
+        });
+
+    t1.join();
+    t2.join();
+
+	return 0;
+}
