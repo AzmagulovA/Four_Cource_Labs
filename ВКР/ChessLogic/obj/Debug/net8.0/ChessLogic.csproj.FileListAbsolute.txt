@@ -9,3 +9,14 @@ C:\Users\Артём\source\repos\ChessAnalyser\ChessLogic\obj\Debug\net8.0\Chess
 C:\Users\Артём\source\repos\ChessAnalyser\ChessLogic\obj\Debug\net8.0\refint\ChessLogic.dll
 C:\Users\Артём\source\repos\ChessAnalyser\ChessLogic\obj\Debug\net8.0\ChessLogic.pdb
 C:\Users\Артём\source\repos\ChessAnalyser\ChessLogic\obj\Debug\net8.0\ref\ChessLogic.dll
+C:\Users\Artyom\source\repos\ChessAnalyser\ChessLogic\bin\Debug\net8.0\ChessLogic.deps.json
+C:\Users\Artyom\source\repos\ChessAnalyser\ChessLogic\bin\Debug\net8.0\ChessLogic.dll
+C:\Users\Artyom\source\repos\ChessAnalyser\ChessLogic\bin\Debug\net8.0\ChessLogic.pdb
+C:\Users\Artyom\source\repos\ChessAnalyser\ChessLogic\obj\Debug\net8.0\ChessLogic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Artyom\source\repos\ChessAnalyser\ChessLogic\obj\Debug\net8.0\ChessLogic.AssemblyInfoInputs.cache
+C:\Users\Artyom\source\repos\ChessAnalyser\ChessLogic\obj\Debug\net8.0\ChessLogic.AssemblyInfo.cs
+C:\Users\Artyom\source\repos\ChessAnalyser\ChessLogic\obj\Debug\net8.0\ChessLogic.csproj.CoreCompileInputs.cache
+C:\Users\Artyom\source\repos\ChessAnalyser\ChessLogic\obj\Debug\net8.0\ChessLogic.dll
+C:\Users\Artyom\source\repos\ChessAnalyser\ChessLogic\obj\Debug\net8.0\refint\ChessLogic.dll
+C:\Users\Artyom\source\repos\ChessAnalyser\ChessLogic\obj\Debug\net8.0\ChessLogic.pdb
+C:\Users\Artyom\source\repos\ChessAnalyser\ChessLogic\obj\Debug\net8.0\ref\ChessLogic.dll

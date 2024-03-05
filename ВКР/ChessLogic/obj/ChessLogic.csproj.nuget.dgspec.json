@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Артём\\source\\repos\\ChessAnalyser\\ChessLogic\\ChessLogic.csproj": {}
+    "C:\\Users\\Artyom\\source\\repos\\ChessAnalyser\\ChessLogic\\ChessLogic.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Артём\\source\\repos\\ChessAnalyser\\ChessLogic\\ChessLogic.csproj": {
+    "C:\\Users\\Artyom\\source\\repos\\ChessAnalyser\\ChessLogic\\ChessLogic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Артём\\source\\repos\\ChessAnalyser\\ChessLogic\\ChessLogic.csproj",
+        "projectUniqueName": "C:\\Users\\Artyom\\source\\repos\\ChessAnalyser\\ChessLogic\\ChessLogic.csproj",
         "projectName": "ChessLogic",
-        "projectPath": "C:\\Users\\Артём\\source\\repos\\ChessAnalyser\\ChessLogic\\ChessLogic.csproj",
-        "packagesPath": "C:\\Users\\Артём\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Артём\\source\\repos\\ChessAnalyser\\ChessLogic\\obj\\",
+        "projectPath": "C:\\Users\\Artyom\\source\\repos\\ChessAnalyser\\ChessLogic\\ChessLogic.csproj",
+        "packagesPath": "C:\\Users\\Artyom\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Artyom\\source\\repos\\ChessAnalyser\\ChessLogic\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Артём\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Artyom\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
