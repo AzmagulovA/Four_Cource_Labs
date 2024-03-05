@@ -66,9 +66,6 @@ void Parallel(int n, float** matrix) {
     }*/
    
 }
-// Инициализируем матрицу Гаусса
-    // n - число уравнений
-    // m - число переменных
 void Pryamoi(int n, float** matrix) {    
     float coef;
     float values[10000];
